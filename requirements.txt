@@ -1,3 +1,5 @@
+!apt-get update
+!apt-get install -y libgl1-mesa-glx
 Flask==2.1.0
 numpy==1.19.5
 opencv-python==4.5.4.58
