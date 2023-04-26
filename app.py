@@ -9,12 +9,12 @@ import time
 import gdown
 
 # Specify the Google Drive file ID and output file name
-# file_id = '1VHl2W04ZuSkCKwKywAlDWiZRw-RANEZ0'
-# output_file = 'model/resnet-34_kinetics.onnx'
+file_id = '1VHl2W04ZuSkCKwKywAlDWiZRw-RANEZ0'
+output_file = 'model/resnet-34_kinetics.onnx'
 
 # # Download the file from Google Drive
-# url = f'https://drive.google.com/uc?id={file_id}'
-# gdown.download(url, output_file, quiet=False)
+url = f'https://drive.google.com/uc?id={file_id}'
+gdown.download(url, output_file, quiet=False)
 
 # Load the file into your Streamlit Cloud application
 # self.ACTION_RESNET = output_file
@@ -26,8 +26,8 @@ app = Flask(__name__)
 class Parameters:
     def __init__(self):
         self.CLASSES = open("model/action_recognition_kinetics.txt").read().strip().split("\n")
-        self.ACTION_RESNET = 'model/resnet-34_kinetics.onnx'
-        # self.ACTION_RESNET = output_file
+        # self.ACTION_RESNET = 'model/resnet-34_kinetics.onnx'
+        self.ACTION_RESNET = output_file
         self.SAMPLE_DURATION = 16
         self.SAMPLE_SIZE = 112
 
